@@ -95,19 +95,6 @@ namespace thoiloanplayer
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
-			this.wb.TabIndex = 0;
-		
-			// 
-			// MainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1034, 702);
-			this.Controls.Add(this.wb);
-			this.Name = "MainForm";
-			this.Text = "Thời Loạn";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.WebBrowser wb;
 		private System.Windows.Forms.TabControl tabControl1;

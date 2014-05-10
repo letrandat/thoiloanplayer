@@ -54,6 +54,7 @@ namespace thoiloanplayer
 			this.wb.Location = new System.Drawing.Point(0, 0);
 			this.wb.MinimumSize = new System.Drawing.Size(20, 20);
 			this.wb.Name = "wb";
+			this.wb.ScriptErrorsSuppressed = true;
 			this.wb.Size = new System.Drawing.Size(1034, 702);
 			this.wb.TabIndex = 0;
 			this.wb.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WbDocumentCompleted);

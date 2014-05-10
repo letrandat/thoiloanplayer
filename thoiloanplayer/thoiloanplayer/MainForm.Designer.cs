@@ -93,11 +93,11 @@ namespace thoiloanplayer
 			// 
 			// pictureBox_hide
 			// 
-			this.pictureBox_hide.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pictureBox_hide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox_hide.Image = global::thoiloanplayer.Resource.right;
-			this.pictureBox_hide.Location = new System.Drawing.Point(990, 3);
+			this.pictureBox_hide.Location = new System.Drawing.Point(990, 32);
 			this.pictureBox_hide.Name = "pictureBox_hide";
-			this.pictureBox_hide.Size = new System.Drawing.Size(33, 68);
+			this.pictureBox_hide.Size = new System.Drawing.Size(31, 33);
 			this.pictureBox_hide.TabIndex = 5;
 			this.pictureBox_hide.TabStop = false;
 			this.pictureBox_hide.Click += new System.EventHandler(this.PictureBox_hideClick);
@@ -158,11 +158,11 @@ namespace thoiloanplayer
 			// pictureBox_show
 			// 
 			this.pictureBox_show.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.pictureBox_show.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.pictureBox_show.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox_show.Image = global::thoiloanplayer.Resource.left;
-			this.pictureBox_show.Location = new System.Drawing.Point(982, 629);
+			this.pictureBox_show.Location = new System.Drawing.Point(982, 656);
 			this.pictureBox_show.Name = "pictureBox_show";
-			this.pictureBox_show.Size = new System.Drawing.Size(33, 68);
+			this.pictureBox_show.Size = new System.Drawing.Size(31, 33);
 			this.pictureBox_show.TabIndex = 2;
 			this.pictureBox_show.TabStop = false;
 			this.pictureBox_show.Click += new System.EventHandler(this.PictureBox_showClick);

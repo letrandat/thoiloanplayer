@@ -44,6 +44,7 @@ namespace thoiloanplayer
 			this.textBox_user = new System.Windows.Forms.TextBox();
 			this.label_user = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.checkBox_save = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.SuspendLayout();
@@ -72,6 +73,7 @@ namespace thoiloanplayer
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.checkBox_save);
 			this.tabPage1.Controls.Add(this.button_play);
 			this.tabPage1.Controls.Add(this.textBox_password);
 			this.tabPage1.Controls.Add(this.textBox_user);
@@ -86,7 +88,7 @@ namespace thoiloanplayer
 			// 
 			// button_play
 			// 
-			this.button_play.Location = new System.Drawing.Point(263, 3);
+			this.button_play.Location = new System.Drawing.Point(321, 3);
 			this.button_play.Name = "button_play";
 			this.button_play.Size = new System.Drawing.Size(75, 23);
 			this.button_play.TabIndex = 3;
@@ -127,6 +129,15 @@ namespace thoiloanplayer
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// checkBox_save
+			// 
+			this.checkBox_save.Location = new System.Drawing.Point(263, 3);
+			this.checkBox_save.Name = "checkBox_save";
+			this.checkBox_save.Size = new System.Drawing.Size(52, 24);
+			this.checkBox_save.TabIndex = 4;
+			this.checkBox_save.Text = "Save";
+			this.checkBox_save.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +153,7 @@ namespace thoiloanplayer
 			this.tabPage1.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.CheckBox checkBox_save;
 		private System.Windows.Forms.Button button_play;
 		private System.Windows.Forms.TextBox textBox_password;
 		private System.Windows.Forms.TextBox textBox_user;

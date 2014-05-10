@@ -56,6 +56,7 @@ namespace thoiloanplayer
 			this.Controls.Add(this.wb);
 			this.Name = "MainForm";
 			this.Text = "Thời Loạn";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.WebBrowser wb;

@@ -36,17 +36,22 @@ namespace thoiloanplayer
 				return;
 			}
 			wb.Navigate(@"http://id.thoiloan.vn/?sid=none&err=1&v=4");
+			triedLogin = false;
 		}
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
 		{
-			wb.Document.GetElementById("username").SetAttribute("value", textBox_user.Text);
-			wb.Document.GetElementById("password").SetAttribute("value", textBox_password.Text);
-			HtmlElementCollection classButton = wb.Document.All;
-			foreach (HtmlElement element in classButton) {
-				if (element.GetAttribute("className") == "ChoiNgay") {
-					element.InvokeMember("click");
+			if (triedLogin != true) {
+				wb.Document.GetElementById("username").SetAttribute("value", textBox_user.Text);
+				wb.Document.GetElementById("password").SetAttribute("value", textBox_password.Text);
+				HtmlElementCollection classButton = wb.Document.All;
+				foreach (HtmlElement element in classButton) {
+					if (element.GetAttribute("className") == "ChoiNgay") {
+						element.InvokeMember("click");
+					}
 				}
+				triedLogin = true;
 			}
 		}
+		private bool triedLogin = false;
 	}
 }

@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: Admin
+ * Author: Dat - trandatnh@gmail.com
  * Date: 10/5/2014
  * Time: 10:17 AM
  * 
@@ -39,12 +39,12 @@ namespace thoiloanplayer
 			this.wb = new System.Windows.Forms.WebBrowser();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.checkBox_save = new System.Windows.Forms.CheckBox();
 			this.button_play = new System.Windows.Forms.Button();
 			this.textBox_password = new System.Windows.Forms.TextBox();
 			this.textBox_user = new System.Windows.Forms.TextBox();
 			this.label_user = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.checkBox_save = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.SuspendLayout();
@@ -85,6 +85,16 @@ namespace thoiloanplayer
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// checkBox_save
+			// 
+			this.checkBox_save.Location = new System.Drawing.Point(263, 3);
+			this.checkBox_save.Name = "checkBox_save";
+			this.checkBox_save.Size = new System.Drawing.Size(52, 24);
+			this.checkBox_save.TabIndex = 4;
+			this.checkBox_save.Text = "Save";
+			this.checkBox_save.UseVisualStyleBackColor = true;
+			this.checkBox_save.Click += new System.EventHandler(this.CheckBox_saveClick);
 			// 
 			// button_play
 			// 
@@ -128,15 +138,6 @@ namespace thoiloanplayer
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// checkBox_save
-			// 
-			this.checkBox_save.Location = new System.Drawing.Point(263, 3);
-			this.checkBox_save.Name = "checkBox_save";
-			this.checkBox_save.Size = new System.Drawing.Size(52, 24);
-			this.checkBox_save.TabIndex = 4;
-			this.checkBox_save.Text = "Save";
-			this.checkBox_save.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 

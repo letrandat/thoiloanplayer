@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: Admin
+ * Author: Dat - trandatnh@gmail.com
  * Date: 10/5/2014
  * Time: 10:17 AM
  * 
@@ -28,16 +28,30 @@ namespace thoiloanplayer
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+			loadUser();
 		}
+
+		void loadUser()
+		{
+			string user = "";
+			string password = "";
+			CfgManager.loadUser(ref user, ref password);
+			if (user != String.Empty && password != String.Empty) {
+				textBox_user.Text = user;
+				textBox_password.Text = password;
+			}
+		}
+
 		void Button_playClick(object sender, EventArgs e)
 		{
-			if (textBox_user.Text == "" || textBox_password.Text == "") {
+			if (textBox_user.Text == String.Empty || textBox_password.Text == String.Empty) {
 				MessageBox.Show("Username or password is empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			wb.Navigate(@"http://id.thoiloan.vn/?sid=none&err=1&v=4");
 			triedLogin = false;
 		}
+		
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
 		{
 			if (triedLogin != true) {
@@ -52,6 +66,17 @@ namespace thoiloanplayer
 				triedLogin = true;
 			}
 		}
+		
+		void CheckBox_saveClick(object sender, System.EventArgs e)
+		{
+			if (textBox_user.Text == String.Empty || textBox_password.Text == String.Empty) {
+				checkBox_save.Checked = false;
+				MessageBox.Show("Username or password's empty?!", "Error", MessageBoxButtons.OK);
+				return;
+			}
+			CfgManager.saveUser(textBox_user.Text, textBox_password.Text);
+		}
+		
 		private bool triedLogin = false;
 	}
 }

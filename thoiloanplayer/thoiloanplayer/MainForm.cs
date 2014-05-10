@@ -18,6 +18,8 @@ namespace thoiloanplayer
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		bool triedLogin = false;
+		
 		public MainForm()
 		{
 			//
@@ -74,7 +76,6 @@ namespace thoiloanplayer
 			CfgManager.saveUser(textBox_user.Text, textBox_password.Text);
 		}
 		
-		bool triedLogin = false;
 		void PictureBox_hideClick(object sender, System.EventArgs e)
 		{
 			tabControl1.Hide();

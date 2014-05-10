@@ -24,10 +24,6 @@ namespace thoiloanplayer
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 			loadUser();
 		}
 
@@ -77,6 +73,6 @@ namespace thoiloanplayer
 			CfgManager.saveUser(textBox_user.Text, textBox_password.Text);
 		}
 		
-		private bool triedLogin = false;
+		bool triedLogin = false;
 	}
 }

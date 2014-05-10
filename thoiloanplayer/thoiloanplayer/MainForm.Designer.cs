@@ -39,14 +39,18 @@ namespace thoiloanplayer
 			this.wb = new System.Windows.Forms.WebBrowser();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.pictureBox_hide = new System.Windows.Forms.PictureBox();
 			this.checkBox_save = new System.Windows.Forms.CheckBox();
 			this.button_play = new System.Windows.Forms.Button();
 			this.textBox_password = new System.Windows.Forms.TextBox();
 			this.textBox_user = new System.Windows.Forms.TextBox();
 			this.label_user = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.pictureBox_show = new System.Windows.Forms.PictureBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_show)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// wb
@@ -73,6 +77,7 @@ namespace thoiloanplayer
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.pictureBox_hide);
 			this.tabPage1.Controls.Add(this.checkBox_save);
 			this.tabPage1.Controls.Add(this.button_play);
 			this.tabPage1.Controls.Add(this.textBox_password);
@@ -85,6 +90,17 @@ namespace thoiloanplayer
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// pictureBox_hide
+			// 
+			this.pictureBox_hide.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pictureBox_hide.Image = global::thoiloanplayer.Resource.right;
+			this.pictureBox_hide.Location = new System.Drawing.Point(990, 3);
+			this.pictureBox_hide.Name = "pictureBox_hide";
+			this.pictureBox_hide.Size = new System.Drawing.Size(33, 68);
+			this.pictureBox_hide.TabIndex = 5;
+			this.pictureBox_hide.TabStop = false;
+			this.pictureBox_hide.Click += new System.EventHandler(this.PictureBox_hideClick);
 			// 
 			// checkBox_save
 			// 
@@ -139,11 +155,24 @@ namespace thoiloanplayer
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// pictureBox_show
+			// 
+			this.pictureBox_show.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox_show.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.pictureBox_show.Image = global::thoiloanplayer.Resource.left;
+			this.pictureBox_show.Location = new System.Drawing.Point(982, 629);
+			this.pictureBox_show.Name = "pictureBox_show";
+			this.pictureBox_show.Size = new System.Drawing.Size(33, 68);
+			this.pictureBox_show.TabIndex = 2;
+			this.pictureBox_show.TabStop = false;
+			this.pictureBox_show.Click += new System.EventHandler(this.PictureBox_showClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 702);
+			this.Controls.Add(this.pictureBox_show);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.wb);
 			this.Name = "MainForm";
@@ -152,8 +181,12 @@ namespace thoiloanplayer
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_show)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox pictureBox_show;
+		private System.Windows.Forms.PictureBox pictureBox_hide;
 		private System.Windows.Forms.CheckBox checkBox_save;
 		private System.Windows.Forms.Button button_play;
 		private System.Windows.Forms.TextBox textBox_password;

@@ -25,6 +25,7 @@ namespace thoiloanplayer
 			//
 			InitializeComponent();
 			loadUser();
+			pictureBox_show.Hide();
 		}
 
 		void loadUser()
@@ -74,5 +75,15 @@ namespace thoiloanplayer
 		}
 		
 		bool triedLogin = false;
+		void PictureBox_hideClick(object sender, System.EventArgs e)
+		{
+			tabControl1.Hide();
+			pictureBox_show.Show();
+		}
+		void PictureBox_showClick(object sender, System.EventArgs e)
+		{
+			tabControl1.Show();
+			pictureBox_show.Hide();
+		}
 	}
 }

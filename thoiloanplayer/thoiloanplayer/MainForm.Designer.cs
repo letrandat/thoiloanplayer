@@ -40,7 +40,12 @@ namespace thoiloanplayer
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.label_user = new System.Windows.Forms.Label();
+			this.textBox_user = new System.Windows.Forms.TextBox();
+			this.textBox_password = new System.Windows.Forms.TextBox();
+			this.button_play = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
+			this.tabPage1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// wb
@@ -65,6 +70,10 @@ namespace thoiloanplayer
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.button_play);
+			this.tabPage1.Controls.Add(this.textBox_password);
+			this.tabPage1.Controls.Add(this.textBox_user);
+			this.tabPage1.Controls.Add(this.label_user);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -78,10 +87,42 @@ namespace thoiloanplayer
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(192, 74);
+			this.tabPage2.Size = new System.Drawing.Size(1026, 74);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// label_user
+			// 
+			this.label_user.Location = new System.Drawing.Point(8, 8);
+			this.label_user.Name = "label_user";
+			this.label_user.Size = new System.Drawing.Size(100, 23);
+			this.label_user.TabIndex = 0;
+			this.label_user.Text = "User";
+			// 
+			// textBox_user
+			// 
+			this.textBox_user.Location = new System.Drawing.Point(51, 5);
+			this.textBox_user.Name = "textBox_user";
+			this.textBox_user.Size = new System.Drawing.Size(100, 20);
+			this.textBox_user.TabIndex = 1;
+			// 
+			// textBox_password
+			// 
+			this.textBox_password.Location = new System.Drawing.Point(157, 5);
+			this.textBox_password.Name = "textBox_password";
+			this.textBox_password.PasswordChar = '*';
+			this.textBox_password.Size = new System.Drawing.Size(100, 20);
+			this.textBox_password.TabIndex = 2;
+			// 
+			// button_play
+			// 
+			this.button_play.Location = new System.Drawing.Point(263, 3);
+			this.button_play.Name = "button_play";
+			this.button_play.Size = new System.Drawing.Size(75, 23);
+			this.button_play.TabIndex = 3;
+			this.button_play.Text = "Play";
+			this.button_play.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
@@ -94,8 +135,14 @@ namespace thoiloanplayer
 			this.Text = "Thời Loạn";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.tabControl1.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.tabPage1.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button_play;
+		private System.Windows.Forms.TextBox textBox_password;
+		private System.Windows.Forms.TextBox textBox_user;
+		private System.Windows.Forms.Label label_user;
 		private System.Windows.Forms.WebBrowser wb;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;

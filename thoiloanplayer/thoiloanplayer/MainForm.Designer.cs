@@ -36,16 +36,28 @@ namespace thoiloanplayer
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.wb = new System.Windows.Forms.WebBrowser();
 			this.SuspendLayout();
+			// 
+			// wb
+			// 
+			this.wb.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.wb.Location = new System.Drawing.Point(0, 0);
+			this.wb.MinimumSize = new System.Drawing.Size(20, 20);
+			this.wb.Name = "wb";
+			this.wb.Size = new System.Drawing.Size(1034, 702);
+			this.wb.TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 702);
+			this.Controls.Add(this.wb);
 			this.Name = "MainForm";
 			this.Text = "Thời Loạn";
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.WebBrowser wb;
 	}
 }

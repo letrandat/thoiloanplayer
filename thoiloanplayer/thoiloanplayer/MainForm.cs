@@ -19,6 +19,8 @@ namespace thoiloanplayer
 	public partial class MainForm : Form
 	{
 		bool triedLogin = false;
+		IntPtr gameHandle = IntPtr.Zero;
+		FormController fc = new FormController();
 		
 		public MainForm()
 		{
@@ -80,6 +82,13 @@ namespace thoiloanplayer
 		{
 			tabControl1.Show();
 			pictureBox_show.Hide();
+		}
+		void KeepConnectionAlive()
+		{
+			if (gameHandle == IntPtr.Zero) {
+				gameHandle = fc.GetGameHandle(wb.Handle);
+			}
+			Mouse.click(gameHandle, 1382, 744);
 		}
 	}
 }

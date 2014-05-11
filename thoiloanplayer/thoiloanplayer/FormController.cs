@@ -26,7 +26,7 @@ namespace thoiloanplayer
 		[return: MarshalAs(UnmanagedType.Bool)]
 		private static extern bool EnumChildWindows(IntPtr window, EnumWindowProc callback, IntPtr lParam);
  
-		public List<IntPtr> GetAllChildHandles(IntPtr handle)
+		List<IntPtr> GetAllChildHandles(IntPtr handle)
 		{
 			var childHandles = new List<IntPtr>();
  
@@ -43,7 +43,7 @@ namespace thoiloanplayer
 			return childHandles;
 		}
  
-		private bool EnumWindow(IntPtr hWnd, IntPtr lParam)
+		bool EnumWindow(IntPtr hWnd, IntPtr lParam)
 		{
 			GCHandle gcChildhandlesList = GCHandle.FromIntPtr(lParam);
  
@@ -55,6 +55,12 @@ namespace thoiloanplayer
 			childHandles.Add(hWnd);
  
 			return true;
+		}
+		
+		public IntPtr GetGameHandle(IntPtr wbHandle)
+		{
+			var children = GetAllChildHandles(wbHandle);
+			return children[children.Count-1];
 		}
 	}
 }

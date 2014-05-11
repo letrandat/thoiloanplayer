@@ -8,6 +8,7 @@
  */
 using System;
 using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace thoiloanplayer
 {
@@ -28,6 +29,11 @@ namespace thoiloanplayer
 		{
 			SendMessage(hWnd, WM_LBUTTONDOWN, (IntPtr)1, (IntPtr)((y << 0x10) | x));
 			SendMessage(hWnd, WM_LBUTTONUP, (IntPtr)0, (IntPtr)((y << 0x10) | x));
+		}
+		public static void click(IntPtr hWnd, Point p)
+		{
+			SendMessage(hWnd, WM_LBUTTONDOWN, (IntPtr)1, (IntPtr)((p.Y << 0x10) | p.X));
+			SendMessage(hWnd, WM_LBUTTONUP, (IntPtr)0, (IntPtr)((p.Y << 0x10) | p.X));
 		}
 	}
 }

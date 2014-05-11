@@ -9,6 +9,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace thoiloanplayer
 {
@@ -17,6 +18,7 @@ namespace thoiloanplayer
 	/// </summary>
 	public class FormController
 	{
+		public Point chatbox_send = new Point(253, 686);
 		public FormController()
 		{
 		}

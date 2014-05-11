@@ -88,7 +88,7 @@ namespace thoiloanplayer
 			if (gameHandle == IntPtr.Zero) {
 				gameHandle = fc.GetGameHandle(wb.Handle);
 			}
-			Mouse.click(gameHandle, 1382, 744);
+			Mouse.click(gameHandle, fc.chatbox_send);
 		}
 	}
 }

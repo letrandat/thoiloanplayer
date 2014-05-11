@@ -30,6 +30,7 @@ namespace thoiloanplayer
 			InitializeComponent();
 			loadUser();
 			pictureBox_show.Hide();
+			numericUpDown_keepOnline.Hide(); // TODO active keepOnline timer
 		}
 		void loadUser()
 		{
@@ -89,6 +90,17 @@ namespace thoiloanplayer
 				gameHandle = fc.GetGameHandle(wb.Handle);
 			}
 			Mouse.click(gameHandle, fc.chatbox_send);
+		}
+		void CheckBox_keepOnlineClick(object sender, System.EventArgs e)
+		{
+			if (checkBox_keepOnline.Checked)
+				timer_keepOnline.Start();
+			else
+				timer_keepOnline.Stop();
+		}
+		void Timer_keepOnlineTick(object sender, System.EventArgs e)
+		{
+			KeepConnectionAlive();
 		}
 	}
 }

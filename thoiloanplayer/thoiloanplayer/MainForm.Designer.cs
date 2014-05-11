@@ -36,9 +36,12 @@ namespace thoiloanplayer
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.wb = new System.Windows.Forms.WebBrowser();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.checkBox_keepOnline = new System.Windows.Forms.CheckBox();
+			this.numericUpDown_keepOnline = new System.Windows.Forms.NumericUpDown();
 			this.pictureBox_hide = new System.Windows.Forms.PictureBox();
 			this.checkBox_save = new System.Windows.Forms.CheckBox();
 			this.button_play = new System.Windows.Forms.Button();
@@ -47,8 +50,10 @@ namespace thoiloanplayer
 			this.label_user = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pictureBox_show = new System.Windows.Forms.PictureBox();
+			this.timer_keepOnline = new System.Windows.Forms.Timer(this.components);
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_keepOnline)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_show)).BeginInit();
 			this.SuspendLayout();
@@ -77,6 +82,8 @@ namespace thoiloanplayer
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.checkBox_keepOnline);
+			this.tabPage1.Controls.Add(this.numericUpDown_keepOnline);
 			this.tabPage1.Controls.Add(this.pictureBox_hide);
 			this.tabPage1.Controls.Add(this.checkBox_save);
 			this.tabPage1.Controls.Add(this.button_play);
@@ -90,6 +97,23 @@ namespace thoiloanplayer
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// checkBox_keepOnline
+			// 
+			this.checkBox_keepOnline.Location = new System.Drawing.Point(8, 31);
+			this.checkBox_keepOnline.Name = "checkBox_keepOnline";
+			this.checkBox_keepOnline.Size = new System.Drawing.Size(128, 24);
+			this.checkBox_keepOnline.TabIndex = 7;
+			this.checkBox_keepOnline.Text = "Keep Online (minute)";
+			this.checkBox_keepOnline.UseVisualStyleBackColor = true;
+			this.checkBox_keepOnline.Click += new System.EventHandler(this.CheckBox_keepOnlineClick);
+			// 
+			// numericUpDown_keepOnline
+			// 
+			this.numericUpDown_keepOnline.Location = new System.Drawing.Point(137, 34);
+			this.numericUpDown_keepOnline.Name = "numericUpDown_keepOnline";
+			this.numericUpDown_keepOnline.Size = new System.Drawing.Size(120, 20);
+			this.numericUpDown_keepOnline.TabIndex = 6;
 			// 
 			// pictureBox_hide
 			// 
@@ -167,6 +191,11 @@ namespace thoiloanplayer
 			this.pictureBox_show.TabStop = false;
 			this.pictureBox_show.Click += new System.EventHandler(this.PictureBox_showClick);
 			// 
+			// timer_keepOnline
+			// 
+			this.timer_keepOnline.Interval = 60000;
+			this.timer_keepOnline.Tick += new System.EventHandler(this.Timer_keepOnlineTick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,10 +210,14 @@ namespace thoiloanplayer
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_keepOnline)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_show)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Timer timer_keepOnline;
+		private System.Windows.Forms.CheckBox checkBox_keepOnline;
+		private System.Windows.Forms.NumericUpDown numericUpDown_keepOnline;
 		private System.Windows.Forms.PictureBox pictureBox_show;
 		private System.Windows.Forms.PictureBox pictureBox_hide;
 		private System.Windows.Forms.CheckBox checkBox_save;

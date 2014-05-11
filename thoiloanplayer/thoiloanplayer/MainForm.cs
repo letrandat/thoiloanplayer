@@ -30,7 +30,6 @@ namespace thoiloanplayer
 			InitializeComponent();
 			loadUser();
 			pictureBox_show.Hide();
-			numericUpDown_keepOnline.Hide(); // TODO active keepOnline timer
 		}
 		void loadUser()
 		{
@@ -93,6 +92,7 @@ namespace thoiloanplayer
 		}
 		void CheckBox_keepOnlineClick(object sender, System.EventArgs e)
 		{
+			timer_keepOnline.Interval = (int)numericUpDown_keepOnline.Value * 60 * 1000;
 			if (checkBox_keepOnline.Checked)
 				timer_keepOnline.Start();
 			else

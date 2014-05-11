@@ -111,9 +111,19 @@ namespace thoiloanplayer
 			// numericUpDown_keepOnline
 			// 
 			this.numericUpDown_keepOnline.Location = new System.Drawing.Point(137, 34);
+			this.numericUpDown_keepOnline.Minimum = new decimal(new int[] {
+			1,
+			0,
+			0,
+			0});
 			this.numericUpDown_keepOnline.Name = "numericUpDown_keepOnline";
 			this.numericUpDown_keepOnline.Size = new System.Drawing.Size(120, 20);
 			this.numericUpDown_keepOnline.TabIndex = 6;
+			this.numericUpDown_keepOnline.Value = new decimal(new int[] {
+			1,
+			0,
+			0,
+			0});
 			// 
 			// pictureBox_hide
 			// 

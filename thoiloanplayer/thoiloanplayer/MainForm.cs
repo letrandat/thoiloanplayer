@@ -29,7 +29,6 @@ namespace thoiloanplayer
 			loadUser();
 			pictureBox_show.Hide();
 		}
-
 		void loadUser()
 		{
 			string user = "";
@@ -40,7 +39,6 @@ namespace thoiloanplayer
 				textBox_password.Text = password;
 			}
 		}
-
 		void Button_playClick(object sender, EventArgs e)
 		{
 			if (textBox_user.Text == String.Empty || textBox_password.Text == String.Empty) {
@@ -50,7 +48,6 @@ namespace thoiloanplayer
 			wb.Navigate(@"http://id.thoiloan.vn/?sid=none&err=1&v=4");
 			triedLogin = false;
 		}
-		
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
 		{
 			if (triedLogin != true) {
@@ -65,7 +62,6 @@ namespace thoiloanplayer
 				triedLogin = true;
 			}
 		}
-		
 		void CheckBox_saveClick(object sender, System.EventArgs e)
 		{
 			if (textBox_user.Text == String.Empty || textBox_password.Text == String.Empty) {
@@ -75,7 +71,6 @@ namespace thoiloanplayer
 			}
 			CfgManager.saveUser(textBox_user.Text, textBox_password.Text);
 		}
-		
 		void PictureBox_hideClick(object sender, System.EventArgs e)
 		{
 			tabControl1.Hide();

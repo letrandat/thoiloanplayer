@@ -7,10 +7,9 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace thoiloanplayer
 {
@@ -122,7 +121,10 @@ namespace thoiloanplayer
 		}
 		void Timer_keepOnlineTick(object sender, System.EventArgs e)
 		{
-			KeepConnectionAlive();
+			if (!FormController.IsActive(this.Handle)) {
+				Debug.WriteLine("Form is not active, keep online");
+				KeepConnectionAlive();
+			}
 		}
 	}
 }

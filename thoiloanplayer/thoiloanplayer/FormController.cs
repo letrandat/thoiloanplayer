@@ -21,6 +21,8 @@ namespace thoiloanplayer
 		public Point chatbox_send = new Point(251, 683);
 		public Point chatbox_zoom = new Point(296, 684);
 		public Point achievement = new Point(41, 152);
+		[DllImport("user32.dll")]
+		private static extern IntPtr GetForegroundWindow();
 		
 		public FormController()
 		{
@@ -65,7 +67,12 @@ namespace thoiloanplayer
 		public IntPtr GetGameHandle(IntPtr wbHandle)
 		{
 			var children = GetAllChildHandles(wbHandle);
-			return children[children.Count-1];
+			return children[children.Count - 1];
+		}
+		
+		public static bool IsActive(IntPtr handle)
+		{
+			return handle == GetForegroundWindow();
 		}
 	}
 }

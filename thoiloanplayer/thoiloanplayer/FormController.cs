@@ -18,9 +18,13 @@ namespace thoiloanplayer
 	/// </summary>
 	public class FormController
 	{
-		public Point chatbox_send = new Point(251, 683);
-		public Point chatbox_zoom = new Point(296, 684);
+		public Point chatboxSend = new Point(251, 683);
+		public Point chatboxZoom = new Point(296, 684);
 		public Point achievement = new Point(41, 152);
+		public Point attack = new Point(887, 586);
+		public Point raid = new Point(669, 561);
+		public Point endRaid = new Point(506, 21);
+		
 		[DllImport("user32.dll")]
 		private static extern IntPtr GetForegroundWindow();
 		

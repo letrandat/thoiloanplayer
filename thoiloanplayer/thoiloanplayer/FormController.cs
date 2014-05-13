@@ -18,8 +18,10 @@ namespace thoiloanplayer
 	/// </summary>
 	public class FormController
 	{
-		public Point chatbox_send = new Point(253, 686);
-		public Point archievement = new Point(41, 151);
+		public Point chatbox_send = new Point(251, 683);
+		public Point chatbox_zoom = new Point(296, 684);
+		public Point achievement = new Point(41, 152);
+		
 		public FormController()
 		{
 		}

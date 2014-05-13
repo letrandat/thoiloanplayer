@@ -88,7 +88,7 @@ namespace thoiloanplayer
 			if (gameHandle == IntPtr.Zero) {
 				gameHandle = fc.GetGameHandle(wb.Handle);
 			}
-			Mouse.click(gameHandle, fc.archievement);
+			Mouse.click(gameHandle, fc.achievement);
 		}
 		void CheckBox_keepOnlineClick(object sender, System.EventArgs e)
 		{

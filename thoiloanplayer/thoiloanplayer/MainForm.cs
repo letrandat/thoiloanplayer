@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace thoiloanplayer
 {
@@ -30,6 +31,27 @@ namespace thoiloanplayer
 			InitializeComponent();
 			loadUser();
 			pictureBox_show.Hide();
+			EnableFullFramerateWhenInvisible();
+		}
+		void EnableFullFramerateWhenInvisible()
+		{
+			string system32 = Environment.GetEnvironmentVariable("windir") + @"\System32\Macromed\Flash";
+			string mms_cfg = "FullFramerateWhenInvisible = 1";
+			if (Directory.Exists(system32)) {
+				if (!File.Exists(system32 + @"\mms.cfg")) {
+					var file = new System.IO.StreamWriter(system32 + @"\mms.cfg");
+					file.Write(mms_cfg);
+					file.Close();
+				}
+			}
+			string wow64 = Environment.GetEnvironmentVariable("windir") + @"\SysWOW64\Macromed\Flash";
+			if (Directory.Exists(wow64)) {
+				if (!File.Exists(wow64 + @"\mms.cfg")) {
+					var file = new System.IO.StreamWriter(wow64 + @"\mms.cfg");
+					file.Write(mms_cfg);
+					file.Close();
+				}
+			}
 		}
 		void loadUser()
 		{

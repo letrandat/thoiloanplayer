@@ -30,6 +30,7 @@ namespace thoiloanplayer
 			InitializeComponent();
 			loadUser();
 			pictureBox_show.Hide();
+			checkBox_keepOnline.Enabled = false;
 			EnableFullFramerateWhenInvisible();
 		}
 		void EnableFullFramerateWhenInvisible()
@@ -70,6 +71,7 @@ namespace thoiloanplayer
 			}
 			wb.Navigate(@"http://id.thoiloan.vn/?sid=none&err=1&v=4");
 			triedLogin = false;
+			checkBox_keepOnline.Enabled = true;
 		}
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
 		{

@@ -146,7 +146,6 @@ namespace thoiloanplayer
 			this.Controls.Add(this.pictureBox_show);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.wb);
-			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Player";

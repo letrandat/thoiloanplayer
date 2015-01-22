@@ -39,11 +39,11 @@ namespace thoiloanplayer
 			this.wb = new System.Windows.Forms.WebBrowser();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.button_F5 = new System.Windows.Forms.Button();
 			this.pictureBox_hide = new System.Windows.Forms.PictureBox();
 			this.button_play = new System.Windows.Forms.Button();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pictureBox_show = new System.Windows.Forms.PictureBox();
-			this.button_F5 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).BeginInit();
@@ -84,6 +84,16 @@ namespace thoiloanplayer
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// button_F5
+			// 
+			this.button_F5.Location = new System.Drawing.Point(87, 6);
+			this.button_F5.Name = "button_F5";
+			this.button_F5.Size = new System.Drawing.Size(75, 23);
+			this.button_F5.TabIndex = 6;
+			this.button_F5.Text = "F5";
+			this.button_F5.UseVisualStyleBackColor = true;
+			this.button_F5.Click += new System.EventHandler(this.Button_F5Click);
 			// 
 			// pictureBox_hide
 			// 
@@ -128,16 +138,6 @@ namespace thoiloanplayer
 			this.pictureBox_show.TabStop = false;
 			this.pictureBox_show.Click += new System.EventHandler(this.PictureBox_showClick);
 			// 
-			// button_F5
-			// 
-			this.button_F5.Location = new System.Drawing.Point(87, 6);
-			this.button_F5.Name = "button_F5";
-			this.button_F5.Size = new System.Drawing.Size(75, 23);
-			this.button_F5.TabIndex = 6;
-			this.button_F5.Text = "F5";
-			this.button_F5.UseVisualStyleBackColor = true;
-			this.button_F5.Click += new System.EventHandler(this.Button_F5Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +149,7 @@ namespace thoiloanplayer
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Thời Loạn";
+			this.Text = "Player";
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).EndInit();

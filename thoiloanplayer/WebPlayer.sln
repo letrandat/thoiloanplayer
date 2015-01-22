@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-# SharpDevelop 5.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thoiloanplayer", "thoiloanplayer\thoiloanplayer.csproj", "{D9A5B1E1-8E3D-4851-9217-FE6280361550}"
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "thoiloanplayer\Player.csproj", "{D9A5B1E1-8E3D-4851-9217-FE6280361550}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

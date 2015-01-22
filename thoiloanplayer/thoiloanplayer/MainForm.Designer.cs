@@ -36,24 +36,16 @@ namespace thoiloanplayer
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			this.wb = new System.Windows.Forms.WebBrowser();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.checkBox_keepOnline = new System.Windows.Forms.CheckBox();
-			this.numericUpDown_keepOnline = new System.Windows.Forms.NumericUpDown();
 			this.pictureBox_hide = new System.Windows.Forms.PictureBox();
-			this.checkBox_save = new System.Windows.Forms.CheckBox();
 			this.button_play = new System.Windows.Forms.Button();
-			this.textBox_password = new System.Windows.Forms.TextBox();
-			this.textBox_user = new System.Windows.Forms.TextBox();
-			this.label_user = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pictureBox_show = new System.Windows.Forms.PictureBox();
-			this.timer_keepOnline = new System.Windows.Forms.Timer(this.components);
+			this.button_F5 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_keepOnline)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_show)).BeginInit();
 			this.SuspendLayout();
@@ -82,14 +74,9 @@ namespace thoiloanplayer
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.Controls.Add(this.checkBox_keepOnline);
-			this.tabPage1.Controls.Add(this.numericUpDown_keepOnline);
+			this.tabPage1.Controls.Add(this.button_F5);
 			this.tabPage1.Controls.Add(this.pictureBox_hide);
-			this.tabPage1.Controls.Add(this.checkBox_save);
 			this.tabPage1.Controls.Add(this.button_play);
-			this.tabPage1.Controls.Add(this.textBox_password);
-			this.tabPage1.Controls.Add(this.textBox_user);
-			this.tabPage1.Controls.Add(this.label_user);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -97,33 +84,6 @@ namespace thoiloanplayer
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// checkBox_keepOnline
-			// 
-			this.checkBox_keepOnline.Location = new System.Drawing.Point(8, 31);
-			this.checkBox_keepOnline.Name = "checkBox_keepOnline";
-			this.checkBox_keepOnline.Size = new System.Drawing.Size(128, 24);
-			this.checkBox_keepOnline.TabIndex = 7;
-			this.checkBox_keepOnline.Text = "Keep Online (minute)";
-			this.checkBox_keepOnline.UseVisualStyleBackColor = true;
-			this.checkBox_keepOnline.Click += new System.EventHandler(this.CheckBox_keepOnlineClick);
-			// 
-			// numericUpDown_keepOnline
-			// 
-			this.numericUpDown_keepOnline.Location = new System.Drawing.Point(137, 34);
-			this.numericUpDown_keepOnline.Minimum = new decimal(new int[] {
-			1,
-			0,
-			0,
-			0});
-			this.numericUpDown_keepOnline.Name = "numericUpDown_keepOnline";
-			this.numericUpDown_keepOnline.Size = new System.Drawing.Size(120, 20);
-			this.numericUpDown_keepOnline.TabIndex = 6;
-			this.numericUpDown_keepOnline.Value = new decimal(new int[] {
-			1,
-			0,
-			0,
-			0});
 			// 
 			// pictureBox_hide
 			// 
@@ -136,48 +96,15 @@ namespace thoiloanplayer
 			this.pictureBox_hide.TabStop = false;
 			this.pictureBox_hide.Click += new System.EventHandler(this.PictureBox_hideClick);
 			// 
-			// checkBox_save
-			// 
-			this.checkBox_save.Location = new System.Drawing.Point(263, 3);
-			this.checkBox_save.Name = "checkBox_save";
-			this.checkBox_save.Size = new System.Drawing.Size(52, 24);
-			this.checkBox_save.TabIndex = 4;
-			this.checkBox_save.Text = "Save";
-			this.checkBox_save.UseVisualStyleBackColor = true;
-			this.checkBox_save.Click += new System.EventHandler(this.CheckBox_saveClick);
-			// 
 			// button_play
 			// 
-			this.button_play.Location = new System.Drawing.Point(321, 3);
+			this.button_play.Location = new System.Drawing.Point(6, 6);
 			this.button_play.Name = "button_play";
 			this.button_play.Size = new System.Drawing.Size(75, 23);
 			this.button_play.TabIndex = 3;
 			this.button_play.Text = "Play";
 			this.button_play.UseVisualStyleBackColor = true;
 			this.button_play.Click += new System.EventHandler(this.Button_playClick);
-			// 
-			// textBox_password
-			// 
-			this.textBox_password.Location = new System.Drawing.Point(157, 5);
-			this.textBox_password.Name = "textBox_password";
-			this.textBox_password.PasswordChar = '*';
-			this.textBox_password.Size = new System.Drawing.Size(100, 20);
-			this.textBox_password.TabIndex = 2;
-			// 
-			// textBox_user
-			// 
-			this.textBox_user.Location = new System.Drawing.Point(51, 5);
-			this.textBox_user.Name = "textBox_user";
-			this.textBox_user.Size = new System.Drawing.Size(100, 20);
-			this.textBox_user.TabIndex = 1;
-			// 
-			// label_user
-			// 
-			this.label_user.Location = new System.Drawing.Point(8, 8);
-			this.label_user.Name = "label_user";
-			this.label_user.Size = new System.Drawing.Size(100, 23);
-			this.label_user.TabIndex = 0;
-			this.label_user.Text = "User";
 			// 
 			// tabPage2
 			// 
@@ -201,10 +128,15 @@ namespace thoiloanplayer
 			this.pictureBox_show.TabStop = false;
 			this.pictureBox_show.Click += new System.EventHandler(this.PictureBox_showClick);
 			// 
-			// timer_keepOnline
+			// button_F5
 			// 
-			this.timer_keepOnline.Interval = 60000;
-			this.timer_keepOnline.Tick += new System.EventHandler(this.Timer_keepOnlineTick);
+			this.button_F5.Location = new System.Drawing.Point(87, 6);
+			this.button_F5.Name = "button_F5";
+			this.button_F5.Size = new System.Drawing.Size(75, 23);
+			this.button_F5.TabIndex = 6;
+			this.button_F5.Text = "F5";
+			this.button_F5.UseVisualStyleBackColor = true;
+			this.button_F5.Click += new System.EventHandler(this.Button_F5Click);
 			// 
 			// MainForm
 			// 
@@ -220,25 +152,18 @@ namespace thoiloanplayer
 			this.Text = "Thời Loạn";
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
-			this.tabPage1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_keepOnline)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_show)).EndInit();
 			this.ResumeLayout(false);
+
 		}
-		private System.Windows.Forms.Timer timer_keepOnline;
-		private System.Windows.Forms.CheckBox checkBox_keepOnline;
-		private System.Windows.Forms.NumericUpDown numericUpDown_keepOnline;
 		private System.Windows.Forms.PictureBox pictureBox_show;
 		private System.Windows.Forms.PictureBox pictureBox_hide;
-		private System.Windows.Forms.CheckBox checkBox_save;
 		private System.Windows.Forms.Button button_play;
-		private System.Windows.Forms.TextBox textBox_password;
-		private System.Windows.Forms.TextBox textBox_user;
-		private System.Windows.Forms.Label label_user;
 		private System.Windows.Forms.WebBrowser wb;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.Button button_F5;
 	}
 }

@@ -27,9 +27,7 @@ namespace thoiloanplayer
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			loadUser();
 			pictureBox_show.Hide();
-			checkBox_keepOnline.Enabled = false;
 			EnableFullFramerateWhenInvisible();
 		}
 		void EnableFullFramerateWhenInvisible()
@@ -52,35 +50,15 @@ namespace thoiloanplayer
 				}
 			}
 		}
-		void loadUser()
-		{
-			string user = "";
-			string password = "";
-			CfgManager.loadUser(ref user, ref password);
-			if (user != String.Empty && password != String.Empty) {
-				textBox_user.Text = user;
-				textBox_password.Text = password;
-			}
-		}
 		void Button_playClick(object sender, EventArgs e)
 		{
 			var file = new System.IO.StreamReader("url.txt");
 			string url = file.ReadLine();
+			file.Close();
 			wb.Navigate(@url);
-			checkBox_keepOnline.Enabled = true;
-			button_play.Enabled = false;
 		}
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
 		{
-		}
-		void CheckBox_saveClick(object sender, System.EventArgs e)
-		{
-			if (textBox_user.Text == String.Empty || textBox_password.Text == String.Empty) {
-				checkBox_save.Checked = false;
-				MessageBox.Show("Username or password's empty?!", "Error", MessageBoxButtons.OK);
-				return;
-			}
-			CfgManager.saveUser(textBox_user.Text, textBox_password.Text);
 		}
 		void PictureBox_hideClick(object sender, System.EventArgs e)
 		{
@@ -92,26 +70,10 @@ namespace thoiloanplayer
 			tabControl1.Show();
 			pictureBox_show.Hide();
 		}
-		void KeepConnectionAlive()
+		void Button_F5Click(object sender, EventArgs e)
 		{
-			if (gameHandle == IntPtr.Zero) {
-				gameHandle = fc.GetGameHandle(wb.Handle);
-			}
-			Mouse.click(gameHandle, fc.achievement);
-		}
-		void CheckBox_keepOnlineClick(object sender, System.EventArgs e)
-		{
-			timer_keepOnline.Interval = (int)numericUpDown_keepOnline.Value * 60 * 1000;
-			if (checkBox_keepOnline.Checked)
-				timer_keepOnline.Start();
-			else
-				timer_keepOnline.Stop();
-		}
-		void Timer_keepOnlineTick(object sender, System.EventArgs e)
-		{
-			if (!FormController.IsActive(this.Handle)) {
-				Debug.WriteLine("Form is not active, keep online");
-				KeepConnectionAlive();
+			if (!wb.Url.Equals("about:blank")) {
+				wb.Refresh();
 			}
 		}
 	}

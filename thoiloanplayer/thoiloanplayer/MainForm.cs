@@ -64,7 +64,9 @@ namespace thoiloanplayer
 		}
 		void Button_playClick(object sender, EventArgs e)
 		{
-			wb.Navigate(@"http://sg31.vcmedia.vn/ver1.5.1/dos_vn4.swf?v=0506&uid=48876&sid=5&token=73076896c94fa95985216060d9ab8450");
+			var file = new System.IO.StreamReader("url.txt");
+			string url = file.ReadLine();
+			wb.Navigate(@url);
 			checkBox_keepOnline.Enabled = true;
 			button_play.Enabled = false;
 		}

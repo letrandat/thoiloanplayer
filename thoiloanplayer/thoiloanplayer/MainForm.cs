@@ -20,6 +20,7 @@ namespace thoiloanplayer
 	{
 		IntPtr gameHandle = IntPtr.Zero;
 		FormController fc = new FormController();
+		System.Collections.Generic.Dictionary<string, string> Accounts;
 		
 		public MainForm()
 		{
@@ -29,6 +30,7 @@ namespace thoiloanplayer
 			InitializeComponent();
 			pictureBox_show.Hide();
 			EnableFullFramerateWhenInvisible();
+			Button_LoadAccClick(null, null);
 		}
 		void EnableFullFramerateWhenInvisible()
 		{
@@ -52,9 +54,7 @@ namespace thoiloanplayer
 		}
 		void Button_playClick(object sender, EventArgs e)
 		{
-			var file = new System.IO.StreamReader("url.txt");
-			string url = file.ReadLine();
-			file.Close();
+			string url = Accounts[comboBox_Acc.SelectedItem.ToString()];
 			wb.Navigate(@url);
 		}
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
@@ -75,6 +75,23 @@ namespace thoiloanplayer
 			if (!wb.Url.Equals("about:blank")) {
 				wb.Refresh();
 			}
+		}
+		void Button_LoadAccClick(object sender, EventArgs e)
+		{
+			if (Accounts != null) {
+				Accounts.Clear();
+				comboBox_Acc.Items.Clear();
+			}
+			Accounts = new System.Collections.Generic.Dictionary<string, string>();
+			var file = new System.IO.StreamReader(@"url.txt");
+			string line;
+			while ((line = file.ReadLine()) != null) {
+				var account = line.Split(';');
+				Accounts.Add(account[0], account[1]);
+				comboBox_Acc.Items.Add(account[0]);
+			}
+			file.Close();
+			comboBox_Acc.SelectedIndex = 0;
 		}
 	}
 }

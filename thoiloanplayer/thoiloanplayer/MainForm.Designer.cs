@@ -44,6 +44,8 @@ namespace thoiloanplayer
 			this.button_play = new System.Windows.Forms.Button();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pictureBox_show = new System.Windows.Forms.PictureBox();
+			this.comboBox_Acc = new System.Windows.Forms.ComboBox();
+			this.button_LoadAcc = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_hide)).BeginInit();
@@ -74,6 +76,8 @@ namespace thoiloanplayer
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.button_LoadAcc);
+			this.tabPage1.Controls.Add(this.comboBox_Acc);
 			this.tabPage1.Controls.Add(this.button_F5);
 			this.tabPage1.Controls.Add(this.pictureBox_hide);
 			this.tabPage1.Controls.Add(this.button_play);
@@ -138,6 +142,24 @@ namespace thoiloanplayer
 			this.pictureBox_show.TabStop = false;
 			this.pictureBox_show.Click += new System.EventHandler(this.PictureBox_showClick);
 			// 
+			// comboBox_Acc
+			// 
+			this.comboBox_Acc.FormattingEnabled = true;
+			this.comboBox_Acc.Location = new System.Drawing.Point(168, 8);
+			this.comboBox_Acc.Name = "comboBox_Acc";
+			this.comboBox_Acc.Size = new System.Drawing.Size(121, 21);
+			this.comboBox_Acc.TabIndex = 7;
+			// 
+			// button_LoadAcc
+			// 
+			this.button_LoadAcc.Location = new System.Drawing.Point(295, 8);
+			this.button_LoadAcc.Name = "button_LoadAcc";
+			this.button_LoadAcc.Size = new System.Drawing.Size(75, 23);
+			this.button_LoadAcc.TabIndex = 8;
+			this.button_LoadAcc.Text = "Load";
+			this.button_LoadAcc.UseVisualStyleBackColor = true;
+			this.button_LoadAcc.Click += new System.EventHandler(this.Button_LoadAccClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,5 +186,7 @@ namespace thoiloanplayer
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.Button button_F5;
+		private System.Windows.Forms.Button button_LoadAcc;
+		private System.Windows.Forms.ComboBox comboBox_Acc;
 	}
 }

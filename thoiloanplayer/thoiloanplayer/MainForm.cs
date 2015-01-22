@@ -18,7 +18,6 @@ namespace thoiloanplayer
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		bool triedLogin = false;
 		IntPtr gameHandle = IntPtr.Zero;
 		FormController fc = new FormController();
 		
@@ -65,28 +64,12 @@ namespace thoiloanplayer
 		}
 		void Button_playClick(object sender, EventArgs e)
 		{
-			if (textBox_user.Text == String.Empty || textBox_password.Text == String.Empty) {
-				MessageBox.Show("Username or password is empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
-			wb.Navigate(@"http://id.thoiloan.vn/?sid=none&err=1&v=4");
-			triedLogin = false;
+			wb.Navigate(@"http://sg31.vcmedia.vn/ver1.5.1/dos_vn4.swf?v=0506&uid=48876&sid=5&token=73076896c94fa95985216060d9ab8450");
 			checkBox_keepOnline.Enabled = true;
 			button_play.Enabled = false;
 		}
 		void WbDocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
 		{
-			if (triedLogin != true) {
-				wb.Document.GetElementById("username").SetAttribute("value", textBox_user.Text);
-				wb.Document.GetElementById("password").SetAttribute("value", textBox_password.Text);
-				HtmlElementCollection classButton = wb.Document.All;
-				foreach (HtmlElement element in classButton) {
-					if (element.GetAttribute("className") == "ChoiNgay") {
-						element.InvokeMember("click");
-					}
-				}
-				triedLogin = true;
-			}
 		}
 		void CheckBox_saveClick(object sender, System.EventArgs e)
 		{
